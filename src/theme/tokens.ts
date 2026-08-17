@@ -1,0 +1,20 @@
+export const tokens = {
+  color: {
+    gold: '#FDC613',
+    ink: '#14120C',
+    black: '#000000',
+    white: '#FFFFFF',
+    cream: '#FAF7F0',
+    creamBorder: '#ECE4D0',
+    textMuted: '#6B6558',
+    eyebrowMuted: '#9C7300',
+    onDark: '#FFFFFF',
+    onDarkMuted: 'rgba(255, 255, 255, 0.72)',
+    onDarkBorder: 'rgba(255, 255, 255, 0.24)',
+    success: '#3FB950',
+    warning: '#D29922',
+    error: '#F85149',
+  },
+  radius: { pill: 999, card: 24, field: 24 },
+  font: { family: "'Sora', system-ui, -apple-system, sans-serif" },
+} as const;

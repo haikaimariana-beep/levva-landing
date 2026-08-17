@@ -1,0 +1,58 @@
+{
+  "Ambev": {
+    "file": "ambev.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ambev_logo.svg"
+  },
+  "Aché": {
+    "file": "ache.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Logotipo_do_Ach%C3%A9.svg"
+  },
+  "AB InBev": {
+    "file": "ab-inbev.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Anheuser-Busch_InBev_-_logo_(Belgium,_2022-).svg"
+  },
+  "B3": {
+    "file": "b3.png",
+    "source": "https://commons.wikimedia.org/wiki/File:B3_logo.png"
+  },
+  "EMS": {
+    "file": "ems.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Logotipo_da_EMS.svg"
+  },
+  "Azul": {
+    "file": "azul.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Logo_da_Azul_Linhas_A%C3%A9reas_Brasileiras.svg"
+  },
+  "CCR": {
+    "file": "ccr.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:CCR_logo.svg"
+  },
+  "AWS": {
+    "file": "aws.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_Logo.svg"
+  },
+  "Anthropic": {
+    "file": "anthropic.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Anthropic_logo.svg"
+  },
+  "Microsoft": {
+    "file": "microsoft.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Microsoft_logo_(2012).svg"
+  },
+  "Google Cloud": {
+    "file": "google-cloud.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Google_Cloud_logo.svg"
+  },
+  "Databricks": {
+    "file": "databricks.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Databricks-logo.svg"
+  },
+  "Snowflake": {
+    "file": "snowflake.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:Snowflake_Logo.svg"
+  },
+  "OpenAI": {
+    "file": "openai.svg",
+    "source": "https://commons.wikimedia.org/wiki/File:OpenAI_logo_2025_(wordmark).svg"
+  }
+}
