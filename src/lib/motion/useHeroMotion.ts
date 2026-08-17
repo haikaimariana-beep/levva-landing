@@ -53,15 +53,6 @@ export function useHeroMotion({ section, titleMask, content, arcs }: HeroMotionR
             scrub: 0.6,
           },
         });
-
-        // Deriva contínua e lenta — o fundo nunca fica estático, mas sem competir com o campo de dor.
-        gsap.to(arcs.current, {
-          rotation: '+=360',
-          duration: 160,
-          repeat: -1,
-          ease: 'none',
-          delay: 1.4,
-        });
       }
     }, sectionEl);
 
