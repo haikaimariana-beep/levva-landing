@@ -256,19 +256,6 @@ section[id] {
   padding-top: clamp(48px, 8vw, 64px) !important;
 }
 
-.hero-arcs {
-  position: absolute;
-  top: -4%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1100px, 150%);
-  max-width: none;
-  opacity: 0.13;
-  pointer-events: none;
-  z-index: 0;
-  mix-blend-mode: multiply;
-}
-
 .hero-inner {
   position: relative;
   z-index: 1;

@@ -4,20 +4,16 @@ import { DorField } from '../DorField/DorField';
 import { COPY } from '../../data/copy';
 import { CLIENTE_LOGOS } from '../../data/logoAssets';
 import { useHeroMotion } from '../../lib/motion/useHeroMotion';
-import heroArcs from '../../assets/figma/hero-arcs.svg';
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleMaskRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const arcsRef = useRef<HTMLImageElement>(null);
 
-  useHeroMotion({ section: sectionRef, titleMask: titleMaskRef, content: contentRef, arcs: arcsRef });
+  useHeroMotion({ section: sectionRef, titleMask: titleMaskRef, content: contentRef });
 
   return (
     <Section id="hero" className="hero-section" noReveal sectionRef={sectionRef}>
-      <img src={heroArcs} alt="" className="hero-arcs" ref={arcsRef} aria-hidden="true" />
-
       <div className="hero-inner" ref={contentRef}>
         <div className="hero-heading">
           <div className="hero-title-mask">

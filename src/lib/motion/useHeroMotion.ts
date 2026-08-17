@@ -6,15 +6,13 @@ interface HeroMotionRefs {
   section: RefObject<HTMLElement | null>;
   titleMask: RefObject<HTMLDivElement | null>;
   content: RefObject<HTMLDivElement | null>;
-  arcs: RefObject<HTMLImageElement | null>;
 }
 
 /**
- * Entrada de marca do Hero: título revelado sob máscara (categoria "masking"), conteúdo em
- * stagger logo atrás, e a ilustração de arcos com parallax + rotação sutil de scroll
- * (categoria "parallax") — dá profundidade sem competir com o campo de dor.
+ * Entrada de marca do Hero: título revelado sob máscara (categoria "masking") seguido
+ * de stagger no restante do conteúdo.
  */
-export function useHeroMotion({ section, titleMask, content, arcs }: HeroMotionRefs) {
+export function useHeroMotion({ section, titleMask, content }: HeroMotionRefs) {
   useLayoutEffect(() => {
     const sectionEl = section.current;
     if (!sectionEl) return;
@@ -28,11 +26,8 @@ export function useHeroMotion({ section, titleMask, content, arcs }: HeroMotionR
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-      if (arcs.current) {
-        tl.fromTo(arcs.current, { opacity: 0, scale: 0.92, rotate: -4 }, { opacity: 0.13, scale: 1, rotate: 0, duration: 1.4 }, 0);
-      }
       if (titleMask.current) {
-        tl.fromTo(titleMask.current, { yPercent: 115 }, { yPercent: 0, duration: 1.1 }, 0.15);
+        tl.fromTo(titleMask.current, { yPercent: 115 }, { yPercent: 0, duration: 1.1 }, 0);
       }
       if (content.current) {
         tl.fromTo(
@@ -41,18 +36,6 @@ export function useHeroMotion({ section, titleMask, content, arcs }: HeroMotionR
           { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out' },
           '-=0.7',
         );
-      }
-
-      if (arcs.current) {
-        gsap.to(arcs.current, {
-          y: '-=40',
-          scrollTrigger: {
-            trigger: sectionEl,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 0.6,
-          },
-        });
       }
     }, sectionEl);
 
