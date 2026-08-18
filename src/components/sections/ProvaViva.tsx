@@ -24,16 +24,13 @@ export function ProvaViva() {
         {COPY.prova.titulo}
       </h2>
       <div ref={gridRef} className="bento-prova">
-        {CASES.map((c, i) => (
-          <div key={c.cliente} className={i === 0 ? 'numero-card bento-prova__item--flagship' : 'numero-card'}>
-            <NumeroAncora
-              valor={c.numero}
-              className="numero-ancora"
-              key={c.numero}
-            />
-            <p className="numero-card__cliente" style={{ fontSize: i === 0 ? 19 : 17 }}>
-              {c.cliente}
-            </p>
+        {CASES.map((c) => (
+          <div key={c.cliente} className="numero-card">
+            <span className={c.logoEscurecer ? 'numero-card__logo numero-card__logo--escurecer' : 'numero-card__logo'}>
+              <img src={c.logo} alt={c.cliente} />
+            </span>
+            <span className="numero-card__segmento">{c.segmento}</span>
+            <NumeroAncora valor={c.numero} className="numero-ancora" />
             <p className="numero-card__contexto">{c.contexto}</p>
           </div>
         ))}

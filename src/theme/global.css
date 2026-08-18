@@ -47,6 +47,13 @@
   box-sizing: border-box;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+  font-size: 20px;
+  line-height: 1;
+  display: block;
+}
+
 html,
 body {
   margin: 0;
@@ -406,16 +413,33 @@ section[id] {
   display: block;
 }
 
-.hero-microprova {
-  color: var(--text-muted);
-  font-size: 14px;
-  max-width: 520px;
-  line-height: 1.7;
-  padding-top: 12px;
+.hero-selos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 16px;
 }
 
-.hero-microprova strong {
+.hero-selo-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ink);
+  background: var(--white);
+  font-weight: 700;
+  font-size: 13px;
   color: var(--ink);
+}
+
+.hero-selo-gptw {
+  height: 52px;
+  width: auto;
+  border-radius: 8px;
+  display: block;
 }
 
 /* Conteúdo de qualificação/sucesso dentro do drawer lateral (ver .dor-drawer) */
@@ -610,20 +634,120 @@ section[id] {
   font-weight: 800;
 }
 
-.virada-manifesto p {
-  font-size: clamp(16px, 2vw, 18px);
+/* ---------- seção do método ---------- */
+.metodo-lead {
+  max-width: 680px;
+  margin: 0 auto var(--space-6);
+  font-size: 17px;
   line-height: 1.6;
+  text-align: center;
   color: var(--on-dark-muted);
 }
 
-/* ===== GridDores (branco) ===== */
-.dores-mecanica {
+/* ---------- diagrama ---------- */
+.metodo-diagrama { width: 100%; margin: 0 auto var(--space-5); }
+.metodo-diagrama svg { width: 100%; height: auto; }
+/* especificidade (classe+classe) de propósito: precisa vencer ".metodo-diagrama svg" acima */
+.metodo-diagrama svg.metodo-diagrama__h { display: block; }
+.metodo-diagrama svg.metodo-diagrama__v { display: none; }
+@media (max-width: 767px) {
+  .metodo-diagrama svg.metodo-diagrama__h { display: none; }
+  .metodo-diagrama svg.metodo-diagrama__v { display: block; max-width: 360px; margin: 0 auto; }
+}
+.metodo-diagrama__terreno { fill: rgba(255, 255, 255, 0.28); stroke: rgba(255, 255, 255, 0.4); }
+.metodo-diagrama__legenda text { font-size: 13px; fill: var(--on-dark-muted); }
+.metodo-diagrama__legenda text.is-strong { fill: var(--on-dark); font-weight: 600; }
+.metodo-diagrama__legenda text.is-faint { font-size: 11px; fill: rgba(255, 255, 255, 0.45); }
+.metodo-diagrama__gate-label {
+  font-size: 10px; letter-spacing: 0.16em; font-weight: 600; fill: var(--gold);
+}
+.metodo-diagrama__trilhas-label {
+  font-size: 10px; letter-spacing: 0.18em; fill: var(--gold);
+}
+.metodo-diagrama__trilhas-nome text {
+  font-size: 10px; letter-spacing: 0.1em; font-weight: 600; fill: var(--on-dark);
+}
+.metodo-diagrama__eyebrow {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; fill: var(--gold);
+}
+.metodo-diagrama__eyebrow--muted {
+  fill: var(--on-dark-muted); font-weight: 600; letter-spacing: 0.14em;
+}
+.metodo-diagrama__nota {
+  font-size: 11.5px; fill: var(--on-dark-muted);
+}
+.metodo-diagrama__interno {
+  font-size: 13px; font-weight: 600; fill: var(--on-dark);
+}
+.metodo-diagrama__decisao {
+  font-size: 12px; font-weight: 600; fill: var(--on-dark);
+}
+.metodo-diagrama__resultado {
+  font-size: 13.5px; font-weight: 700; fill: var(--gold);
+}
+
+/* ---------- fases ---------- */
+.metodo-fases {
+  display: grid; gap: var(--space-4);
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: var(--space-6);
+}
+.metodo-fase__nome {
+  margin: 0 0 var(--space-2);
+  font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
+}
+.metodo-fase__linha { margin: 0; font-size: 14px; line-height: 1.5; color: var(--on-dark-muted); }
+@media (max-width: 900px) { .metodo-fases { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .metodo-fases { grid-template-columns: 1fr; } }
+
+/* ---------- gate e recusa — lado a lado ---------- */
+.metodo-gate-recusa {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+@media (max-width: 767px) {
+  .metodo-gate-recusa { flex-direction: column; }
+}
+.metodo-gate, .metodo-recusa {
+  flex: 1;
+  padding: var(--space-4);
+  border-radius: var(--radius-card);
+  border: 1px solid var(--on-dark-border);
+}
+.metodo-gate {
+  border-color: rgba(253, 198, 19, 0.35);
+  background: linear-gradient(180deg, rgba(253, 198, 19, 0.07), transparent);
+}
+.metodo-gate h3, .metodo-recusa h3 { margin: 0 0 var(--space-2); font-size: 18px; font-weight: 700; }
+.metodo-gate p, .metodo-recusa p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--on-dark-muted); }
+.metodo-link {
+  display: inline-block; margin-top: var(--space-3);
+  font-size: 14px; font-weight: 600; color: var(--gold); text-decoration: none;
+}
+.metodo-link:hover { text-decoration: underline; }
+
+/* ===== GridDores (branco) — nuvem de cards ao redor do desenho ===== */
+.dores-cloud {
   position: relative;
+  min-height: clamp(620px, 68vw, 800px);
+  margin: 48px 0 8px;
+  /* nuvens podem encostar na borda de propósito (ver NUVEM em GridDores.tsx) —
+     clip só no eixo x pra nunca criar scroll horizontal na página. */
+  overflow-x: clip;
+}
+
+.dores-mecanica {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(340px, 44vw, 560px);
-  margin: 24px 0 8px;
+  width: min(640px, 66%);
+  height: clamp(320px, 40vw, 520px);
 }
 
 .dores-ring {
@@ -723,16 +847,6 @@ section[id] {
   color: var(--text-muted);
 }
 
-.dores-grid-heading {
-  text-align: center;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin: 48px 0 24px;
-}
-
 /* Cards clicáveis de dor (sobre branco) */
 .ant-card-hoverable {
   transition: border-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
@@ -743,24 +857,52 @@ section[id] {
   border: 1.5px solid var(--gold) !important;
   border-radius: 28px !important;
   box-shadow: 0 20px 40px rgba(20, 18, 12, 0.1);
-  height: 100%;
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms ease, border-color 220ms ease;
-}
 
-/* Cada card flutua com uma leve rotação alternada — categoria "dimension" do motion. */
-.ant-col:nth-child(6n + 1) .card-dor { transform: rotate(-1.4deg); }
-.ant-col:nth-child(6n + 2) .card-dor { transform: rotate(1deg); }
-.ant-col:nth-child(6n + 3) .card-dor { transform: rotate(-0.6deg); }
-.ant-col:nth-child(6n + 4) .card-dor { transform: rotate(1.6deg); }
-.ant-col:nth-child(6n + 5) .card-dor { transform: rotate(-1deg); }
-.ant-col:nth-child(6n + 6) .card-dor { transform: rotate(0.8deg); }
+  /* nuvem: cada card flutua solto na sua própria órbita ao redor do desenho —
+     posição vem de custom properties setadas inline por card (ver NUVEM em GridDores.tsx) */
+  position: absolute;
+  top: var(--cloud-top);
+  left: var(--cloud-left);
+  width: var(--cloud-width);
+  transform: translate(-50%, -50%) rotate(var(--cloud-rot));
+  z-index: var(--cloud-z, 1);
+}
 
 .ant-card-hoverable.card-dor:hover,
 .ant-card-hoverable.card-dor:focus-visible {
   border-color: var(--ink) !important;
-  transform: translateY(-6px) rotate(0deg) scale(1.015) !important;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.08) !important;
   box-shadow: 0 28px 52px rgba(20, 18, 12, 0.18);
-  z-index: 2;
+  z-index: 20 !important;
+}
+
+/* Mobile: órbita vira lista empilhada — 9 cards soltos não cabem legíveis numa tela estreita */
+@media (max-width: 900px) {
+  .dores-cloud {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: visible;
+  }
+  .dores-mecanica {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    min-height: clamp(300px, 70vw, 420px);
+    margin-bottom: 8px;
+  }
+  .card-dor {
+    position: static;
+    width: 100% !important;
+    transform: none !important;
+  }
+  .ant-card-hoverable.card-dor:hover,
+  .ant-card-hoverable.card-dor:focus-visible {
+    transform: translateY(-2px) !important;
+  }
 }
 
 .card-dor__icone {
@@ -839,69 +981,96 @@ section[id] {
   box-shadow: 0 14px 34px rgba(253, 198, 19, 0.35) !important;
 }
 
-/* ===== Prova viva (bento sobre gold) ===== */
+/* ===== Prova viva (5 cards de cliente, lado a lado, sobre gold) ===== */
 .bento-prova {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
 @media (min-width: 641px) {
   .bento-prova {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1025px) {
   .bento-prova {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 1fr;
-  }
-
-  .bento-prova__item--flagship {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 .numero-card {
-  background: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--cream-border);
   border-radius: var(--radius-card);
-  padding: 28px;
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 4px;
-  transition: transform 200ms ease;
+  box-shadow: 0 12px 28px rgba(20, 18, 12, 0.06);
+  transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
 .numero-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(20, 18, 12, 0.12);
+}
+
+.numero-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: var(--cream);
+  border: 1px solid var(--cream-border);
+}
+
+.numero-card__logo img {
+  max-height: 26px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.numero-card__logo--escurecer img {
+  filter: brightness(0.4) saturate(1.6);
+}
+
+.numero-card__segmento {
+  display: inline-flex;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(20, 18, 12, 0.06);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .numero-card .numero-ancora {
-  color: var(--gold);
+  color: var(--ink);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.01em;
   font-variant-numeric: tabular-nums;
-  font-size: clamp(26px, 3.4vw, 30px);
-}
-
-.numero-card.bento-prova__item--flagship .numero-ancora {
-  font-size: clamp(38px, 6vw, 60px);
-}
-
-.numero-card__cliente {
-  color: var(--white);
-  font-weight: 700;
-  margin-top: 10px;
+  font-size: clamp(26px, 3.4vw, 32px);
 }
 
 .numero-card__contexto {
-  color: var(--on-dark-muted);
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.4;
+  margin-top: 6px;
 }
 
 /* ===== Como a levva trabalha (preto) ===== */
@@ -1054,7 +1223,7 @@ section[id] {
   align-items: center;
   text-align: center;
   gap: 10px;
-  padding-top: 30px;
+  padding-top: 64px;
 }
 
 @media (max-width: 800px) {
@@ -1062,23 +1231,27 @@ section[id] {
     align-items: flex-start;
     text-align: left;
     padding-top: 0;
-    padding-left: 40px;
+    padding-left: 56px;
   }
 }
 
 .escada-step__dot {
   position: absolute;
   top: 0;
-  width: 30px;
-  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   border-radius: 999px;
   background: var(--white);
   border: 2px solid var(--cream-border);
+  color: var(--ink);
 }
 
 @media (max-width: 800px) {
   .escada-step__dot {
-    top: 2px;
+    top: 0;
     left: 0;
   }
 }

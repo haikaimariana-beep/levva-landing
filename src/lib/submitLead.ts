@@ -5,9 +5,10 @@ export interface LeadPayload {
   categoria: CategoriaDor;
   nome: string;
   emailCorporativo: string;
+  whatsapp: string;
   empresa: string;
-  cargo?: string;
-  contexto?: string;
+  cargo: string;
+  contexto: string;
   origem: 'hero' | 'card_dor';
   timestamp: string; // ISO
 }

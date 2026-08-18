@@ -1,11 +1,12 @@
 import { Card } from 'antd';
+import type { CSSProperties } from 'react';
 import { ArrowRightOutlined } from '@ant-design/icons';
 import type { Dor } from '../../data/dores';
 import { ICONE_DOR } from '../../data/iconesDor';
 import { useDor } from '../../context/DorContext';
 import { track } from '../../lib/track';
 
-export function CardDor({ dor }: { dor: Dor }) {
+export function CardDor({ dor, style }: { dor: Dor; style?: CSSProperties }) {
   const { goToHeroWith } = useDor();
   const Icone = ICONE_DOR[dor.categoria];
 
@@ -30,6 +31,7 @@ export function CardDor({ dor }: { dor: Dor }) {
       data-track="card-dor"
       data-categoria={dor.categoria}
       className={dor.destaque ? 'card-dor card-dor--destaque' : 'card-dor'}
+      style={style}
       styles={{ body: { display: 'flex', flexDirection: 'column', gap: 16, height: '100%' } }}
     >
       {dor.destaque && <span className="card-dor__badge">a dor mais comum</span>}

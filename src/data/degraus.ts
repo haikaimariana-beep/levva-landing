@@ -6,6 +6,7 @@ export interface Degrau {
   badge: string;
   descricao: string;
   destaque: boolean; // o de MENOR compromisso é o mais destacado
+  icone: string; // nome do ícone no Material Symbols Outlined
 }
 
 export const DEGRAUS: Degrau[] = [
@@ -15,6 +16,7 @@ export const DEGRAUS: Degrau[] = [
     badge: 'comece por aqui',
     descricao: 'Um workshop pra mapear onde a IA gera valor no seu contexto. Risco quase zero, clareza imediata.',
     destaque: true,
+    icone: 'rocket_launch',
   },
   {
     id: 'assessment',
@@ -22,6 +24,7 @@ export const DEGRAUS: Degrau[] = [
     badge: 'recomendado',
     descricao: 'A radiografia técnica do seu momento: o que está pronto, o que trava, por onde ir.',
     destaque: false,
+    icone: 'query_stats',
   },
   {
     id: 'poc',
@@ -29,6 +32,7 @@ export const DEGRAUS: Degrau[] = [
     badge: 'quando quiser provar valor',
     descricao: 'Um agente ou squad piloto rodando no seu problema real, com método e governança.',
     destaque: false,
+    icone: 'science',
   },
 ];
 

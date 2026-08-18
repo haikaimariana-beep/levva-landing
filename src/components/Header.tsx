@@ -8,13 +8,12 @@ import { smoothScrollTo } from '../lib/motion/scrollTo';
 import logoLevva from '../assets/figma/logo-levva.png';
 
 const NAV_ITEMS = [
-  { id: 'hero', label: 'Sua dor' },
   { id: 'espelho', label: 'O espelho' },
-  { id: 'virada', label: 'O método' },
+  { id: 'virada', label: 'Contexto' },
+  { id: 'metodo', label: 'O método' },
   { id: 'dores', label: 'Onde resolvemos' },
   { id: 'prova', label: 'Prova viva' },
   { id: 'como', label: 'Como trabalhamos' },
-  { id: 'comecar', label: 'Comece' },
 ];
 
 export function Header() {

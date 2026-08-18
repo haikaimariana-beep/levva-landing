@@ -22,7 +22,9 @@ export function DegrauOferta({ degrau, onCtaClick }: { degrau: Degrau; onCtaClic
       data-track="degrau"
       data-degrau={degrau.id}
     >
-      <span className="escada-step__dot" aria-hidden="true" />
+      <span className="escada-step__dot" aria-hidden="true">
+        <span className="material-symbols-outlined">{degrau.icone}</span>
+      </span>
       <span className="escada-step__badge">{degrau.badge}</span>
       <h3 className="escada-step__nome">{degrau.nome}</h3>
       <p className="escada-step__desc">{degrau.descricao}</p>

@@ -25,6 +25,7 @@ export function DorField() {
   const [status, setStatus] = useState<Status>('idle');
   const [hasFocusedOnce, setHasFocusedOnce] = useState(false);
   const [enviando, setEnviando] = useState(false);
+  const [formValido, setFormValido] = useState(false);
   const qualificacaoRef = useRef<QualificacaoFormHandle>(null);
   const exemploDigitado = useTypewriter(EXEMPLOS_PLACEHOLDER, { paused: status !== 'idle' });
 
@@ -57,6 +58,7 @@ export function DorField() {
     // Depois de um envio com sucesso, libera pra contar outra dor do zero.
     setStatus((s) => (s === 'success' ? 'idle' : 'typing'));
     if (status === 'success') setDorText('');
+    setFormValido(false);
   }
 
   return (
@@ -114,6 +116,7 @@ export function DorField() {
                 type="primary"
                 size="large"
                 loading={enviando}
+                disabled={!formValido}
                 icon={<ArrowRightOutlined />}
                 iconPlacement="end"
                 data-track="lead-submit"
@@ -138,6 +141,7 @@ export function DorField() {
               origem={origem}
               onSuccess={() => setStatus('success')}
               onSendingChange={setEnviando}
+              onValidChange={setFormValido}
             />
           )}
         </div>

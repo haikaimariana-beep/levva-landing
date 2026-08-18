@@ -3,10 +3,9 @@ export const COPY = {
 
   hero: {
     h1: 'Qual é a sua dor?',
-    sub: 'Escreve com suas palavras. A gente lê, entende o contexto, devolve um caminho.',
+    sub: 'Escreve com suas palavras. A gente lê, entende o seu caso, devolve um caminho.',
     cta: 'Quero minha solução',
-    microProva: 'Ambev, B3, Aché, EMS. Decisão já tomada.',
-    selos: '+30 clientes · NPS 72 · Great Place to Work',
+    selos: ['+30 clientes', 'NPS 72'],
   },
 
   espelho: {
@@ -16,10 +15,20 @@ export const COPY = {
     textoGrande: 'transformam IA generativa em diferencial competitivo. O resto fica no piloto.',
   },
 
-  virada: {
-    headline: 'A diferença entre os 5% e o resto não é a ferramenta. É o método.',
-    titulo: 'Na levva, IA não é feature. É como o trabalho é feito.',
-    paragrafo: 'Estratégia, tecnologia e automação andam juntas, com um humano validando cada etapa. É assim que um piloto vira produção — inteiro, sem perder nada pelo caminho.',
+  metodo: {
+    eyebrow: 'O método levva',
+    titulo: 'Contexto Primeiro',
+    lead: 'Os 5% não começam no agente. Começam no terreno. Nosso método existe para construir o contexto que a inteligência precisa — na ordem que funciona, com um humano decidindo cada estreitamento.',
+    legendaDesenho: 'Quatro fases avançam. Três trilhas acumulam e nunca param.',
+    legendaIA: 'IA conduz',
+    legendaHumano: 'Humano valida',
+    legendaConvergencia: 'a convergência é sempre humana',
+    gateTitulo: 'Um ponto do método é intransponível.',
+    gateTexto: 'Sem contexto centralizado e regra de acesso definida, nada avança. Pular a governança e ir direto para os agentes é o caminho mais rápido para virar estatística — e a régua do controle é proporcional ao risco, não burocracia igual para tudo.',
+    recusaTitulo: 'O que nos diferencia não é a ferramenta.',
+    recusaTexto: 'As nossas são abertas e você pode auditar. É o que a gente se recusa a fazer: arquitetura é uma saída do assessment, não uma premissa comercial. POC tecnicamente sofisticada sem business case não avança. E quando não vale, a recomendação é encerrar — com justificativa escrita.',
+    // Sem URL publicada ainda — o link "ver o método inteiro" só entra quando o documento existir.
+    linkCompleto: 'Ver o método inteiro',
   },
 
   dores: {
@@ -60,10 +69,13 @@ export const COPY = {
     submitting: 'Recebendo sua dor…',
     drawerTitulo: 'Só mais um passo',
     qualifTitulo: 'Quase lá. Me conta um pouco mais pra eu já chegar com um caminho certeiro.',
-    contextoLabel: 'Contexto (opcional)',
+    contextoLabel: 'Sobre o seu caso',
     contextoPlaceholder: 'Time, sistemas que já usa, o que já tentou... quanto mais eu souber, mais certeiro chega o caminho.',
+    whatsappLabel: 'WhatsApp/Telefone',
+    whatsappPlaceholder: '(11) 91234-5678',
+    erroWhatsapp: 'Confere o número — com DDD, só falta um dígito ou sobrou um.',
     qualifCta: 'Receber meu caminho',
-    emailHint: 'Corporativo porque quem responde é gente do seu contexto, não um robô de lista.',
+    emailHint: 'Corporativo porque quem responde é gente que entende o seu caso, não um robô de lista.',
     sucessoTitulo: 'Recebemos sua dor.',
     sucessoCorpo: 'Um especialista da levva volta com um caminho pro seu caso específico. Fica de olho no e-mail corporativo que você deixou.',
     sla: 'Normalmente a gente responde em até 1 dia útil.', // usar só se SHOW_SLA

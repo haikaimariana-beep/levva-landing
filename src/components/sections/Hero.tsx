@@ -4,6 +4,7 @@ import { DorField } from '../DorField/DorField';
 import { COPY } from '../../data/copy';
 import { CLIENTE_LOGOS } from '../../data/logoAssets';
 import { useHeroMotion } from '../../lib/motion/useHeroMotion';
+import gptw from '../../assets/logos/gptw.png';
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -36,11 +37,14 @@ export function Hero() {
           ))}
         </div>
 
-        <p className="hero-microprova">
-          {COPY.hero.microProva}
-          <br />
-          <strong>{COPY.hero.selos}</strong>
-        </p>
+        <div className="hero-selos">
+          {COPY.hero.selos.map((selo) => (
+            <span key={selo} className="hero-selo-pill">
+              {selo}
+            </span>
+          ))}
+          <img src={gptw} alt="Great Place to Work" className="hero-selo-gptw" />
+        </div>
       </div>
     </Section>
   );

@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Documentos internos de estratégia/briefing — não fazem parte do código público
+docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
