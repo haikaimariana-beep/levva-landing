@@ -33,7 +33,7 @@ export const CASES: CaseProva[] = [
     numero: '+120%',
     cliente: 'B3',
     segmento: 'Bolsa de valores',
-    contexto: 'de velocidade na definição de requisitos',
+    contexto: 'de velocidade no mapeamento da jornada',
     logo: b3,
   },
   {

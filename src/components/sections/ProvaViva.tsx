@@ -23,6 +23,7 @@ export function ProvaViva() {
       >
         {COPY.prova.titulo}
       </h2>
+      <p className="prova-cases-titulo">{COPY.prova.casesTitulo}</p>
       <div ref={gridRef} className="bento-prova">
         {CASES.map((c) => (
           <div key={c.cliente} className="numero-card">

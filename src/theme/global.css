@@ -982,6 +982,16 @@ section[id] {
 }
 
 /* ===== Prova viva (5 cards de cliente, lado a lado, sobre gold) ===== */
+.prova-cases-titulo {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--eyebrow-muted);
+  margin-bottom: 24px;
+}
+
 .bento-prova {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

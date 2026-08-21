@@ -40,6 +40,7 @@ export const COPY = {
   prova: {
     eyebrow: 'Prova viva',
     titulo: 'Do lado dos 5%. Com número, não com promessa.',
+    casesTitulo: 'Marcas que confiam',
     fecho: 'Nenhum número aqui é estimativa. É o que já aconteceu — e é o que você vai cobrar da gente.',
   },
 

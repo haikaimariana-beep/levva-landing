@@ -12,7 +12,7 @@ export function Virada() {
       <Section id="virada" tone="gold" className="virada-hero" noReveal>
         <div ref={zoomRef} style={{ padding: '32px 0' }}>
           <h2 className="virada-headline">
-            <span className="thin">A diferença entre os 5% e o resto não é a ferramenta. </span>
+            <span className="thin">A diferença entre os 5% e os outros 95% não é a ferramenta. </span>
             <span className="bold">É o contexto que a ferramenta recebe.</span>
           </h2>
         </div>
