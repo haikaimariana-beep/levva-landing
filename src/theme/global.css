@@ -480,6 +480,20 @@ section[id] {
   padding: 32px;
 }
 
+/* Botão de envio: cinza/neutro por padrão (form incompleto), só fica preto quando
+   já dá pra enviar — sem isso o texto ficava invisível (cinza sobre preto). */
+.ant-btn.dor-drawer__submit {
+  background: #d9d9d9 !important;
+  border-color: #d9d9d9 !important;
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.ant-btn.dor-drawer__submit.dor-drawer__submit--pronto {
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+  color: var(--white) !important;
+}
+
 @media (max-width: 540px) {
   .dor-drawer .ant-drawer-content-wrapper {
     width: 100% !important;

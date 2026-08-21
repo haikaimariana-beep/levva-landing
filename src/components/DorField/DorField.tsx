@@ -121,7 +121,8 @@ export function DorField() {
                 iconPlacement="end"
                 data-track="lead-submit"
                 onClick={() => qualificacaoRef.current?.submit()}
-                style={{ height: 52, fontSize: 16, flex: 1, background: 'var(--ink)', borderColor: 'var(--ink)' }}
+                className={formValido ? 'dor-drawer__submit dor-drawer__submit--pronto' : 'dor-drawer__submit'}
+                style={{ height: 52, fontSize: 16, flex: 1 }}
               >
                 {COPY.mecanica.qualifCta}
               </Button>
