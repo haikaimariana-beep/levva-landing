@@ -1,6 +1,11 @@
 export const COPY = {
   marca: { logo: 'levva', assinatura: 'o poder do simples' },
 
+  whatsapp: {
+    numero: '5519996518555',
+    mensagem: 'Olá! Vim pela landing page da levva e quero saber mais sobre o método Contexto Primeiro.',
+  },
+
   hero: {
     h1: 'Qual é a sua dor?',
     sub: 'Escreve com suas palavras. A gente lê, entende o seu caso, devolve um caminho.',

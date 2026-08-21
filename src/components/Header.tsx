@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Button } from 'antd';
 import { ArrowRightOutlined, CloseOutlined, MenuOutlined } from '@ant-design/icons';
-import { useDor } from '../context/DorContext';
 import { track } from '../lib/track';
 import { useActiveSection } from '../lib/useActiveSection';
 import { smoothScrollTo } from '../lib/motion/scrollTo';
+import { whatsappLink } from '../lib/whatsapp';
 import logoLevva from '../assets/figma/logo-levva.png';
 
 const NAV_ITEMS = [
@@ -17,13 +17,12 @@ const NAV_ITEMS = [
 ];
 
 export function Header() {
-  const { scrollToHero } = useDor();
   const [menuOpen, setMenuOpen] = useState(false);
   const active = useActiveSection(NAV_ITEMS.map((i) => i.id));
 
   function handleCta() {
-    track('cta_proximo_passo_click', { degrau: 'header' });
-    scrollToHero();
+    track('whatsapp_click', { origem: 'header' });
+    window.open(whatsappLink(), '_blank', 'noopener,noreferrer');
   }
 
   function handleNavClick(id: string) {
