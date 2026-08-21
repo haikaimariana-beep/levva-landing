@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.env
+.env.*
+!.env.example
 
 # Documentos internos de estratégia/briefing — não fazem parte do código público
 docs/
