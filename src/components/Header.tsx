@@ -22,6 +22,7 @@ export function Header() {
 
   function handleCta() {
     track('whatsapp_click', { origem: 'header' });
+    setMenuOpen(false);
     window.open(whatsappLink(), '_blank', 'noopener,noreferrer');
   }
 
@@ -102,6 +103,17 @@ export function Header() {
             {item.label}
           </a>
         ))}
+        <Button
+          type="default"
+          icon={<ArrowRightOutlined />}
+          iconPlacement="end"
+          onClick={handleCta}
+          data-track="degrau"
+          data-degrau="header-mobile"
+          className="site-header__mobile-cta"
+        >
+          Falar com a levva
+        </Button>
       </nav>
     </header>
   );

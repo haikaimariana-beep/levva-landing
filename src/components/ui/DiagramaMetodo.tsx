@@ -180,7 +180,7 @@ export function DiagramaMetodo({ className, gateLabel = true }: DiagramaMetodoPr
       {/* ============================= VERTICAL ============================= */}
       <svg
         className="metodo-diagrama__v"
-        viewBox="0 0 360 760"
+        viewBox="0 0 360 780"
         role="img"
         aria-label="O método Contexto Primeiro da levva"
         aria-describedby="mtd-v-desc"

@@ -199,6 +199,32 @@ section[id] {
   transform: translateY(-1px);
 }
 
+/* Abaixo de 1080px o menu vira hambúrguer — o CTA do header não cabe ao lado
+   dele em telas de celular, então some daqui e reaparece dentro do menu. */
+@media (max-width: 1079px) {
+  .site-header__cta {
+    display: none !important;
+  }
+}
+
+.site-header__mobile-cta {
+  display: none !important;
+  margin: 16px var(--container-margin) !important;
+  border-radius: var(--radius-pill) !important;
+  background: var(--ink) !important;
+  border-color: var(--ink) !important;
+  color: var(--white) !important;
+  font-weight: 700 !important;
+  height: 46px !important;
+  width: calc(100% - 2 * var(--container-margin));
+}
+
+@media (max-width: 1079px) {
+  .site-header__mobile-cta {
+    display: inline-flex !important;
+  }
+}
+
 .site-header__burger {
   display: inline-flex;
   align-items: center;
@@ -901,11 +927,15 @@ section[id] {
     overflow-x: visible;
   }
   .dores-mecanica {
-    position: static;
+    /* precisa continuar sendo o container posicionado dos .dores-ring — eles usam
+       largura/altura em % e, sem isso, herdam o tamanho gigante do .dores-cloud
+       (a lista inteira empilhada) em vez do bloco pequeno da ilustração. */
+    position: relative;
+    top: 0;
+    left: 0;
     transform: none;
     width: 100%;
-    height: auto;
-    min-height: clamp(300px, 70vw, 420px);
+    height: clamp(300px, 70vw, 420px);
     margin-bottom: 8px;
   }
   .card-dor {
@@ -1317,6 +1347,18 @@ section[id] {
 
 .escada-cta-final:hover {
   transform: translateY(-1px);
+}
+
+/* Frase inteira como texto do botão não cabe numa linha em telas de celular —
+   sem isso o antd Button mantinha white-space:nowrap e vazava pra fora da tela. */
+@media (max-width: 540px) {
+  .escada-cta-final {
+    width: 100%;
+    height: auto !important;
+    white-space: normal !important;
+    padding: 16px 24px !important;
+    line-height: 1.3;
+  }
 }
 
 /* ===== Footer ===== */
