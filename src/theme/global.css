@@ -474,6 +474,15 @@ section[id] {
   text-align: left;
 }
 
+/* O textarea de "Sobre o seu caso" herdava o border-radius pill (999px) do tema global
+   de Input — numa caixa alta de várias linhas isso arredonda demais os cantos, espreme
+   o texto e dá a impressão de estar centralizado. Aqui ele volta pro radius normal de
+   campo, com o texto alinhado à esquerda como qualquer textarea. */
+.dor-flow-card textarea {
+  text-align: left;
+  border-radius: var(--radius-field) !important;
+}
+
 .dor-flow-card .ant-form-item-label > label {
   color: var(--ink) !important;
   font-weight: 600;

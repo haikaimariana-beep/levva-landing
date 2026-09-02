@@ -27,7 +27,7 @@ export function DorField() {
   const [enviando, setEnviando] = useState(false);
   const [formValido, setFormValido] = useState(false);
   const qualificacaoRef = useRef<QualificacaoFormHandle>(null);
-  const exemploDigitado = useTypewriter(EXEMPLOS_PLACEHOLDER, { paused: status !== 'idle' });
+  const exemploDigitado = useTypewriter(EXEMPLOS_PLACEHOLDER, { paused: status !== 'idle', typeSpeed: 55, eraseSpeed: 26 });
 
   function handleFocus() {
     if (!hasFocusedOnce) {
@@ -69,6 +69,14 @@ export function DorField() {
           value={dorText}
           onChange={(e) => handleChange(e.target.value)}
           onFocus={handleFocus}
+          onKeyDown={(e) => {
+            // Campo de "pergunta única" com botão de envio ao lado — enter não deve
+            // quebrar linha, deve disparar o mesmo envio do botão.
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              handleSubmitDor();
+            }
+          }}
           autoSize={{ minRows: 1, maxRows: 6 }}
           aria-label="Qual é a sua dor?"
         />
