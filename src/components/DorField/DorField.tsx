@@ -27,7 +27,7 @@ export function DorField() {
   const [enviando, setEnviando] = useState(false);
   const [formValido, setFormValido] = useState(false);
   const qualificacaoRef = useRef<QualificacaoFormHandle>(null);
-  const exemploDigitado = useTypewriter(EXEMPLOS_PLACEHOLDER, { paused: status !== 'idle', typeSpeed: 55, eraseSpeed: 26 });
+  const exemploDigitado = useTypewriter(EXEMPLOS_PLACEHOLDER, { paused: status !== 'idle', typeSpeed: 100, eraseSpeed: 45 });
 
   function handleFocus() {
     if (!hasFocusedOnce) {
