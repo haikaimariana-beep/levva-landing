@@ -136,7 +136,7 @@ export const QualificacaoForm = forwardRef<QualificacaoFormHandle, QualificacaoF
           style={{ marginBottom: erroEnvio ? 16 : 0 }}
           rules={[{ required: true, min: 10, message: 'Conta um pouco mais pra gente já chegar com um caminho certeiro.' }]}
         >
-          <Input.TextArea autoSize={{ minRows: 3, maxRows: 6 }} placeholder={COPY.mecanica.contextoPlaceholder} />
+          <Input.TextArea autoSize={{ minRows: 2, maxRows: 6 }} placeholder={COPY.mecanica.contextoPlaceholder} />
         </Form.Item>
         {erroEnvio && (
           <p role="alert" style={{ color: 'var(--error)', marginBottom: 0 }}>
