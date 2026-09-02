@@ -28,3 +28,6 @@ docs/
 *.njsproj
 *.sln
 *.sw?
+
+# Gerado por scripts/extract-antd-css.ts a cada build (nao precisa versionar)
+public/antd-static.css

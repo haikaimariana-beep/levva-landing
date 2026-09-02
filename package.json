@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run extract:antd-css && tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "extract:antd-css": "node --experimental-strip-types scripts/extract-antd-css.ts",
+    "predev": "npm run extract:antd-css"
   },
   "dependencies": {
     "@ant-design/icons": "^6.3.2",
@@ -20,6 +22,7 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@ant-design/static-style-extract": "^2.1.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
