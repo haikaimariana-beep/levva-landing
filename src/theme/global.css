@@ -693,89 +693,55 @@ section[id] {
   color: var(--on-dark-muted);
 }
 
-/* ---------- diagrama ---------- */
-.metodo-diagrama { width: 100%; margin: 0 auto var(--space-5); }
-.metodo-diagrama svg { width: 100%; height: auto; }
-/* especificidade (classe+classe) de propósito: precisa vencer ".metodo-diagrama svg" acima */
-.metodo-diagrama svg.metodo-diagrama__h { display: block; }
-.metodo-diagrama svg.metodo-diagrama__v { display: none; }
-@media (max-width: 767px) {
-  .metodo-diagrama svg.metodo-diagrama__h { display: none; }
-  .metodo-diagrama svg.metodo-diagrama__v { display: block; max-width: 360px; margin: 0 auto; }
+/* ---------- método PRISMA ---------- */
+.prisma-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5) var(--space-4);
+  max-width: 900px;
+  margin: 0 auto var(--space-6);
 }
-.metodo-diagrama__terreno { fill: rgba(255, 255, 255, 0.28); stroke: rgba(255, 255, 255, 0.4); }
-.metodo-diagrama__legenda text { font-size: 13px; fill: var(--on-dark-muted); }
-.metodo-diagrama__legenda text.is-strong { fill: var(--on-dark); font-weight: 600; }
-.metodo-diagrama__legenda text.is-faint { font-size: 11px; fill: rgba(255, 255, 255, 0.45); }
-.metodo-diagrama__gate-label {
-  font-size: 10px; letter-spacing: 0.16em; font-weight: 600; fill: var(--gold);
+@media (max-width: 700px) {
+  .prisma-grid { grid-template-columns: repeat(2, 1fr); }
 }
-.metodo-diagrama__trilhas-label {
-  font-size: 10px; letter-spacing: 0.18em; fill: var(--gold);
+@media (max-width: 460px) {
+  .prisma-grid { grid-template-columns: 1fr; }
 }
-.metodo-diagrama__trilhas-nome text {
-  font-size: 10px; letter-spacing: 0.1em; font-weight: 600; fill: var(--on-dark);
-}
-.metodo-diagrama__eyebrow {
-  font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; fill: var(--gold);
-}
-.metodo-diagrama__eyebrow--muted {
-  fill: var(--on-dark-muted); font-weight: 600; letter-spacing: 0.14em;
-}
-.metodo-diagrama__nota {
-  font-size: 11.5px; fill: var(--on-dark-muted);
-}
-.metodo-diagrama__interno {
-  font-size: 13px; font-weight: 600; fill: var(--on-dark);
-}
-.metodo-diagrama__decisao {
-  font-size: 12px; font-weight: 600; fill: var(--on-dark);
-}
-.metodo-diagrama__resultado {
-  font-size: 13.5px; font-weight: 700; fill: var(--gold);
-}
-
-/* ---------- fases ---------- */
-.metodo-fases {
-  display: grid; gap: var(--space-4);
-  grid-template-columns: repeat(4, 1fr);
-  margin-bottom: var(--space-6);
-}
-.metodo-fase__nome {
-  margin: 0 0 var(--space-2);
-  font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
-}
-.metodo-fase__linha { margin: 0; font-size: 14px; line-height: 1.5; color: var(--on-dark-muted); }
-@media (max-width: 900px) { .metodo-fases { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .metodo-fases { grid-template-columns: 1fr; } }
-
-/* ---------- gate e recusa — lado a lado ---------- */
-.metodo-gate-recusa {
+.prisma-item {
   display: flex;
-  align-items: stretch;
-  gap: var(--space-4);
-  margin-bottom: var(--space-5);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
 }
-@media (max-width: 767px) {
-  .metodo-gate-recusa { flex-direction: column; }
+.prisma-item__dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 2px solid var(--gold);
+  color: var(--gold);
 }
-.metodo-gate, .metodo-recusa {
-  flex: 1;
-  padding: var(--space-4);
-  border-radius: var(--radius-card);
-  border: 1px solid var(--on-dark-border);
+.prisma-item__dot .material-symbols-outlined { font-size: 24px; }
+.prisma-item__nome {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--on-dark);
 }
-.metodo-gate {
-  border-color: rgba(253, 198, 19, 0.35);
-  background: linear-gradient(180deg, rgba(253, 198, 19, 0.07), transparent);
+.prisma-item__letra {
+  color: var(--gold);
 }
-.metodo-gate h3, .metodo-recusa h3 { margin: 0 0 var(--space-2); font-size: 18px; font-weight: 700; }
-.metodo-gate p, .metodo-recusa p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--on-dark-muted); }
-.metodo-link {
-  display: inline-block; margin-top: var(--space-3);
-  font-size: 14px; font-weight: 600; color: var(--gold); text-decoration: none;
+.prisma-item__linha {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--on-dark-muted);
+  max-width: 220px;
 }
-.metodo-link:hover { text-decoration: underline; }
 
 /* ===== GridDores (branco) — nuvem de cards ao redor do desenho ===== */
 .dores-cloud {
@@ -1088,11 +1054,7 @@ section[id] {
   justify-content: center;
   height: 44px;
   width: 100%;
-  padding: 8px 14px;
   margin-bottom: 14px;
-  border-radius: 12px;
-  background: var(--cream);
-  border: 1px solid var(--cream-border);
 }
 
 .numero-card__logo img {
@@ -1118,15 +1080,6 @@ section[id] {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.numero-card .numero-ancora {
-  color: var(--ink);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.01em;
-  font-variant-numeric: tabular-nums;
-  font-size: clamp(26px, 3.4vw, 32px);
 }
 
 .numero-card__contexto {

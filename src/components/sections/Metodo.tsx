@@ -1,19 +1,16 @@
 import { useRef } from 'react';
 import { Section } from '../Section';
-import { DiagramaMetodo } from '../ui/DiagramaMetodo';
 import { COPY } from '../../data/copy';
-import { FASES_METODO } from '../../data/metodo';
+import { PRISMA_METODO } from '../../data/metodo';
 import { useReveal } from '../../lib/motion/useReveal';
 import { useStagger } from '../../lib/motion/useStagger';
 
 export function Metodo() {
   const wrapRef = useRef<HTMLDivElement>(null);
-  const fasesRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
 
-  // Ordem do reveal segue a leitura: headline → diagrama → fases → gate → recusa.
-  // A citação do Ali Ghodsi já abre a Virada, logo acima — não repete aqui.
   useReveal(wrapRef, { stagger: '.metodo-reveal', y: 24 });
-  useStagger(fasesRef, '.metodo-fase');
+  useStagger(gridRef, '.prisma-item');
 
   return (
     <Section id="metodo" tone="black" noReveal>
@@ -33,34 +30,24 @@ export function Metodo() {
           <p className="metodo-lead">{COPY.metodo.lead}</p>
         </div>
 
-        <div className="metodo-reveal">
-          <DiagramaMetodo />
-          <p className="metodo-lead" style={{ fontSize: 14 }}>
-            {COPY.metodo.legendaDesenho}
-          </p>
-        </div>
-
-        <div className="metodo-reveal metodo-fases" ref={fasesRef}>
-          {FASES_METODO.map((fase) => (
-            <div key={fase.id} className="metodo-fase">
-              <h3 className="metodo-fase__nome">{fase.nome}</h3>
-              <p className="metodo-fase__linha">{fase.linha}</p>
+        <div className="metodo-reveal prisma-grid" ref={gridRef}>
+          {PRISMA_METODO.map((fase) => (
+            <div key={fase.id} className="prisma-item">
+              <span className="prisma-item__dot" aria-hidden="true">
+                <span className="material-symbols-outlined">{fase.icone}</span>
+              </span>
+              <h3 className="prisma-item__nome">
+                <span className="prisma-item__letra">{fase.letra}</span>
+                {fase.palavra.slice(1)}
+              </h3>
+              <p className="prisma-item__linha">{fase.linha}</p>
             </div>
           ))}
         </div>
 
-        <div className="metodo-reveal metodo-gate-recusa">
-          <div className="metodo-gate">
-            <h3>{COPY.metodo.gateTitulo}</h3>
-            <p>{COPY.metodo.gateTexto}</p>
-          </div>
-
-          <div className="metodo-recusa">
-            <h3>{COPY.metodo.recusaTitulo}</h3>
-            <p>{COPY.metodo.recusaTexto}</p>
-            {/* "Ver o método inteiro" fica de fora até existir uma URL real (ver PROMPT_CLAUDE_CODE.md, seção 3) */}
-          </div>
-        </div>
+        <p className="metodo-reveal metodo-lead" style={{ fontSize: 14, textAlign: 'center', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+          {COPY.metodo.legendaDesenho}
+        </p>
       </div>
     </Section>
   );

@@ -22,18 +22,9 @@ export const COPY = {
 
   metodo: {
     eyebrow: 'O método levva',
-    titulo: 'Contexto Primeiro',
-    lead: 'Os 5% não começam no agente. Começam no terreno. Nosso método existe para construir o contexto que a inteligência precisa — na ordem que funciona, com um humano decidindo cada estreitamento.',
-    legendaDesenho: 'Quatro fases avançam. Três trilhas acumulam e nunca param.',
-    legendaIA: 'IA conduz',
-    legendaHumano: 'Humano valida',
-    legendaConvergencia: 'a convergência é sempre humana',
-    gateTitulo: 'Um ponto do método é intransponível.',
-    gateTexto: 'Sem contexto centralizado e regra de acesso definida, nada avança. Pular a governança e ir direto para os agentes é o caminho mais rápido para virar estatística — e a régua do controle é proporcional ao risco, não burocracia igual para tudo.',
-    recusaTitulo: 'O que nos diferencia não é a ferramenta.',
-    recusaTexto: 'As nossas são abertas e você pode auditar. É o que a gente se recusa a fazer: arquitetura é uma saída do assessment, não uma premissa comercial. POC tecnicamente sofisticada sem business case não avança. E quando não vale, a recomendação é encerrar — com justificativa escrita.',
-    // Sem URL publicada ainda — o link "ver o método inteiro" só entra quando o documento existir.
-    linkCompleto: 'Ver o método inteiro',
+    titulo: 'Método PRISMA',
+    lead: 'Uma abordagem levva para compreender contextos, organizar decisões e aplicar tecnologia em dores reais de negócio. Habilitamos agentes de IA no ciclo de vida do produto, com estratégia, engenharia, governança e validação humana.',
+    legendaDesenho: 'Compreender. Organizar. Transformar.',
   },
 
   dores: {
@@ -54,7 +45,7 @@ export const COPY = {
     titulo: 'IA no comando do resultado. Nunca o contrário.',
     sub: 'O que separa quem capturou valor de quem virou manchete não é tecnologia. É método.',
     blocos: [
-      { titulo: 'Método próprio (AI-Powered SDLC + BMAD).', texto: 'IA no ciclo inteiro de desenvolvimento, com um responsável validando cada etapa. Nada roda sem alguém de olho.' },
+      { titulo: 'Método próprio (PRISMA).', texto: 'Problema, realidade e intenção definem o que construir; solução, métrica e aprendizado garantem que funcionou. Sempre com um humano validando cada etapa.' },
       { titulo: 'Modelos flexíveis.', texto: 'Escopo fechado, alocação especializada ou squad dedicado. Quem se encaixa no seu momento é a levva.' },
       { titulo: 'Ecossistema de parceiros.', texto: 'AWS, Anthropic, Microsoft, Google Cloud, Databricks, Snowflake, OpenAI. A gente só recomenda o que usa todos os dias.' },
     ],

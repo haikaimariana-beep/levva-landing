@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { Section } from '../Section';
-import { NumeroAncora } from '../ui/NumeroAncora';
 import { CASES } from '../../data/cases';
 import { COPY } from '../../data/copy';
 import { useStagger } from '../../lib/motion/useStagger';
@@ -31,7 +30,6 @@ export function ProvaViva() {
               <img src={c.logo} alt={c.cliente} />
             </span>
             <span className="numero-card__segmento">{c.segmento}</span>
-            <NumeroAncora valor={c.numero} className="numero-ancora" />
             <p className="numero-card__contexto">{c.contexto}</p>
           </div>
         ))}
